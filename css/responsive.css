@@ -132,14 +132,22 @@
 	padding: 0;
 	margin-top: 21px;
 }
+/* RTL Only - Menu on the left */
+html[dir="rtl"] .slicknav_menu {
+	padding: 0 !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
 .slicknav_nav .slicknav_item li{
 	border-radius:0px;
-	text-align:center;
+	text-align:right;
+	direction: rtl;
 }
 .slicknav_nav li, .slicknav_nav ul {
 	display: block;
-	text-align: center;
 	border-bottom: 1px solid #0000001a;
+	direction: rtl;
+	text-align: right;
 }
 .slicknav_nav .slicknav_item a{
 	
@@ -150,6 +158,8 @@
 	margin:0px;
 	text-transform:uppercase;
 	font-weight:400;
+	direction: rtl;
+	text-align: right;
 }
 
 .slicknav_nav .slicknav_item a i {
@@ -168,6 +178,20 @@
 	background: #333;
 	position: relative;
 	top: -4px;
+	float: left;
+	direction: ltr;
+}
+/* RTL Only - Button positioned on the left */
+html[dir="rtl"] .slicknav_menu .slicknav_btn {
+	margin: 0 !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 0 !important;
+	transform: translateY(-50%) !important;
+	float: none !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+	z-index: 999 !important;
 }
 .slicknav_menu .slicknav_menutxt{
 	text-shadow:none;
@@ -186,6 +210,10 @@
 	padding:0px;
 	margin-bottom: 30px;
 }
+.section-title h2 {
+	font-size: 28px;
+	line-height: 1.3;
+}
 #header .contact{
 	float:none;
 	text-align:center;
@@ -198,10 +226,21 @@
 }
 #header .logo {
 	padding-top: 14px;
-	
+	text-align: right;
 }
 .mobile-menu{
 	display:block;
+	text-align: left;
+}
+/* RTL Only - Mobile menu positioned on the left */
+html[dir="rtl"] .mobile-menu{
+	position: absolute !important;
+	left: 0 !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+	z-index: 999 !important;
 }
 #header .nav li a {
 	padding: 30px 7px;
@@ -212,16 +251,34 @@
 
 #slider .single-slider h1 {
 	font-size: 22px;
+	line-height: 32px;
 }
 #slider .single-slider .text {
 	margin-top: 50px;
+	padding: 0 15px;
 }
-#slider .single-slider h1 {
-	line-height: 32px;
+#slider .single-slider p {
+	font-size: 14px;
+	line-height: 1.6;
+	margin-top: 15px;
 }
-
 #slider .button {
 	margin-top: 30px;
+}
+#slider .button .btn {
+	font-size: 13px;
+	padding: 0 20px;
+	height: 38px;
+	line-height: 38px;
+	margin-bottom: 10px;
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#slider .button .btn:first-child {
+	margin-bottom: 10px;
 }
 #about {
 	padding:50px 0px;
@@ -235,12 +292,30 @@
 }
 #about .image img {
 	margin-top: 20px;
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+}
+#about .single-about p {
+	font-size: 14px;
+	line-height: 1.7;
+}
+#about .single-about .bolt {
+	font-size: 15px;
 }
 
 
 
 #service .single-service {
 	margin-top: 40px;
+}
+#service .single-service h5 {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+#service .single-service p {
+	font-size: 14px;
+	line-height: 1.6;
 }
 .skill {
 	padding: 50px 0px;
@@ -364,12 +439,45 @@
 	margin-bottom: 20px;
 }
 #contact .form-head {
-	padding: 0px;
+	padding: 20px 15px;
 	box-shadow: none;
 	margin: 0px;
 }
 #contact .contact-info{
 	margin-bottom:20px;
+	text-align: center;
+}
+#contact .contact-info h4 {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+#contact .contact-info p {
+	font-size: 14px;
+	line-height: 1.6;
+}
+#contact .contact-info span {
+	font-size: 14px;
+	margin-top: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+#contact .form input,
+#contact .form textarea {
+	font-size: 14px;
+	padding: 12px 15px;
+	width: 100%;
+}
+#contact .form textarea {
+	height: 150px;
+	resize: vertical;
+}
+#contact .form .btn {
+	width: 100%;
+	font-size: 15px;
+	padding: 12px 20px;
+	margin-top: 10px;
 }
 
 
@@ -483,18 +591,158 @@
 
 }
 
+/* Portfolio Cards Responsive */
+@media only screen and (max-width: 767px) {
+	.portfolio-card {
+		margin-bottom: 20px;
+	}
+	.portfolio-card .portfolio-content h4 {
+		font-size: 16px;
+		line-height: 1.4;
+		margin-bottom: 10px;
+	}
+	.portfolio-tech {
+		flex-wrap: wrap;
+		gap: 5px;
+	}
+	.tech-tag {
+		font-size: 11px;
+		padding: 4px 8px;
+	}
+	.portfolio-number,
+	.portfolio-views {
+		font-size: 12px;
+	}
+}
+
+/* Skill Section Responsive */
+@media only screen and (max-width: 767px) {
+	.skill-group {
+		margin-bottom: 30px;
+	}
+	.skill-group-title {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	.single-skill h4 {
+		font-size: 14px;
+	}
+	.skill-percent {
+		font-size: 12px;
+	}
+	.skill-content h3 {
+		font-size: 22px;
+	}
+	.skill-content p {
+		font-size: 14px;
+		line-height: 1.6;
+	}
+}
+
+/* Images Responsive */
+@media only screen and (max-width: 767px) {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	.portfolio-image img,
+	.single-work img,
+	.about .image img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
+
+/* Footer Responsive */
+@media only screen and (max-width: 767px) {
+	#footer .footer-widget {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	#footer .footer-title {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	#footer .footer-links li {
+		margin-bottom: 8px;
+	}
+	#footer .footer-links li a {
+		font-size: 14px;
+	}
+	#footer .footer-description {
+		font-size: 14px;
+		line-height: 1.6;
+	}
+	#footer .social li {
+		margin: 0 5px 10px 5px;
+	}
+}
+
+/* Clients Section Responsive */
+@media only screen and (max-width: 767px) {
+	#clients .single-clients img {
+		max-width: 120px;
+		max-height: 60px;
+		object-fit: contain;
+	}
+}
+
 @media only screen and (max-width: 320px){
 .section-title {
 	padding: 0 20px;
 }
+.section-title h2 {
+	font-size: 24px;
+}
 #slider .button .primary {
 	margin-bottom: 9px;
+}
+#slider .single-slider h1 {
+	font-size: 20px;
+	line-height: 28px;
+}
+#slider .single-slider p {
+	font-size: 13px;
 }
 .story .section-title h2::before {
 	display:none;
 }
-
-
+#about .single-about p {
+	font-size: 13px;
+}
+#service .single-service h5 {
+	font-size: 16px;
+}
+#service .single-service p {
+	font-size: 13px;
+}
+#contact .form input,
+#contact .form textarea {
+	font-size: 13px;
+	padding: 10px 12px;
+}
+.portfolio-card .portfolio-content h4 {
+	font-size: 15px;
+}
+.portfolio-card .portfolio-content {
+	padding: 15px;
+}
+.portfolio-image {
+	height: 180px !important;
+	min-height: 180px !important;
+	max-height: 180px !important;
+}
+.tech-tag {
+	font-size: 10px;
+	padding: 4px 10px;
+}
+.skill-group-title {
+	font-size: 16px;
+}
+.single-skill h4 {
+	font-size: 13px;
+}
 }
 
 
