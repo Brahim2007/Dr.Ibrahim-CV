@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-ibm-plex-sans-arabic: 'IBM Plex Sans Arabic', sans-serif;
+  --font-playfair-display: 'Playfair Display', serif;
+}
+
+/* Import the original styles from public folder */
+@import url('/css/bootstrap.min.css');
+@import url('/css/font-awesome.min.css');
+@import url('/css/animate.min.css');
+@import url('/css/owl.carousel.min.css');
+@import url('/css/owl.theme.default.min.css');
+@import url('/css/magnific-popup.css');
+@import url('/css/normalize.css');
+@import url('./style.css');
+@import url('/css/responsive.css');
+@import url('/css/rtl.css');
