@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -435,7 +435,7 @@ const projects: ProjectDetails[] = [
   }
 ]
 
-export default function PortfolioSingle() {
+function PortfolioSingleContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const projectId = searchParams.get('project') ?? '9'
@@ -801,5 +801,20 @@ export default function PortfolioSingle() {
 
       <Footer />
     </>
+  )
+}
+
+export default function PortfolioSingle() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">جاري التحميل...</p>
+        </div>
+      </div>
+    }>
+      <PortfolioSingleContent />
+    </Suspense>
   )
 }
