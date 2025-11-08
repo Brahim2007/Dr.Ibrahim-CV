@@ -90,7 +90,7 @@ export default function About() {
               {/* Projects Badge */}
               <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-2xl font-bold">15+</div>
                   <div className="text-sm">مشروع ناجح</div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-gray-200">
           {[
             { number: '95%', label: 'رضا العملاء' },
-            { number: '50+', label: 'مشروع مكتمل' },
+            { number: '15+', label: 'مشروع مكتمل' },
             { number: '5+', label: 'سنوات خبرة' },
             { number: '24/7', label: 'دعم فني' },
           ].map((stat, index) => (

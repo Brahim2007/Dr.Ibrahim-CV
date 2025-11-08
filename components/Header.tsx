@@ -1,13 +1,40 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Home, User, Settings, Code, Briefcase, Mail, Menu, X } from 'lucide-react'
 
-export default function Header() {
+type HeaderProps = {
+  redirectToHome?: boolean
+}
+
+export default function Header({ redirectToHome = false }: HeaderProps) {
   const [isSticky, setIsSticky] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const navItems = redirectToHome
+    ? [
+        { href: '/#slider', icon: 'fa-home', label: 'Home' },
+        { href: '/#about', icon: 'fa-user', label: 'About' },
+        { href: '/#service', icon: 'fa-cogs', label: 'Services' },
+        { href: '/#skill', icon: 'fa-code', label: 'Skills' },
+        { href: '/#latest-works', icon: 'fa-briefcase', label: 'Portfolio' },
+        { href: '/#contact', icon: 'fa-envelope', label: 'Contact' },
+      ]
+    : [
+        { href: '#slider', icon: 'fa-home', label: 'الرئيسية' },
+        { href: '#about', icon: 'fa-user', label: 'نبذة عني' },
+        { href: '#service', icon: 'fa-cogs', label: 'خدمات' },
+        { href: '#skill', icon: 'fa-code', label: 'المهارات' },
+        { href: '#latest-works', icon: 'fa-briefcase', label: 'معرض الأعمال' },
+        { href: '#contact', icon: 'fa-envelope', label: 'اتصل بي' },
+      ]
+  
+  // Debug logging - remove in production
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Header component rendered')
+    console.log('navItems:', navItems)
+    console.log('isMobileMenuOpen:', isMobileMenuOpen)
+    console.log('Navigation items count:', navItems.length)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,122 +49,120 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { href: '#slider', Icon: Home, label: 'الرئيسية' },
-    { href: '#about', Icon: User, label: 'نبذة عني' },
-    { href: '#service', Icon: Settings, label: 'خدمات' },
-    { href: '#skill', Icon: Code, label: 'المهارات' },
-    { href: '#latest-works', Icon: Briefcase, label: 'معرض الأعمال' },
-    { href: '#contact', Icon: Mail, label: 'اتصل بي' },
-  ]
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (redirectToHome) {
+      setIsMobileMenuOpen(false)
+      return
+    }
+
     e.preventDefault()
+    console.log('Nav click:', href)
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      console.log('Element not found for href:', href)
     }
     setIsMobileMenuOpen(false)
   }
 
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isSticky
-          ? 'bg-gradient-to-l from-emerald-600 to-emerald-800 shadow-lg'
-          : 'bg-gradient-to-l from-emerald-500 to-emerald-700'
-      }`}
+      id="header"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-[70px] bg-gradient-to-r from-emerald-500 to-emerald-700 shadow-lg"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="block">
-              <Image
-                src="/img/nnn.png"
-                alt="logo"
-                width={120}
-                height={60}
-                className="h-12 w-auto md:h-14"
-              />
-            </Link>
-          </div>
+      <div className="h-[70px]">
+        <div className="container mx-auto px-4 h-full">
+          <div className="flex items-center justify-between h-full">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <a href="/" className="block">
+                <img
+                  src="/img/nnn.png"
+                  alt="logo"
+                  className="h-10 w-auto md:h-12 max-w-[100px]"
+                />
+              </a>
+            </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:block">
-            <ul className="flex items-center space-x-1 space-x-reverse">
-              {navItems.map((item, index) => {
-                const IconComponent = item.Icon
-                return (
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:block">
+              <ul className="flex items-center space-x-2 space-x-reverse">
+                {navItems.map((item, index) => (
                   <li key={index}>
                     <a
                       href={item.href}
                       onClick={(e) => handleNavClick(e, item.href)}
-                      className="flex items-center px-4 py-2 text-sm font-medium text-white hover:bg-white/20 rounded-lg cursor-pointer transition-colors duration-200"
+                      className="flex items-center justify-center px-4 py-3 font-medium text-white hover:bg-white/20 rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 text-sm"
                     >
-                      <IconComponent className="ml-2 w-4 h-4" />
+                      <i className={`fas ${item.icon} ml-2 text-sm`}></i>
                       <span>{item.label}</span>
                     </a>
                   </li>
-                )
-              })}
-              <li>
-                <Link
-                  href="/cv-en"
-                  className="flex items-center px-4 py-2 text-sm font-medium text-white bg-white/30 hover:bg-white/40 rounded-lg transition-colors duration-200 border border-white/30"
-                >
-                  CV <span className="mr-2 px-2 py-1 text-xs bg-white text-emerald-600 rounded-full font-bold">EN</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+                ))}
+                <li>
+                    <a
+                      href={redirectToHome ? '/' : '/cv-en'}
+                      className="flex items-center justify-center px-3 py-2 bg-white/30 hover:bg-white/40 rounded-lg transition-all duration-300 hover:scale-105 border border-white/30"
+                    >
+                      <img
+                        src="https://devologyx.io/wp-content/uploads/2022/10/cv.png"
+                        alt="CV Icon"
+                        className="h-8 w-auto"
+                        loading="lazy"
+                      />
+                    </a>
+                </li>
+              </ul>
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition-colors duration-200"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition-colors duration-200"
+              aria-label={isMobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
+            >
+              <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+            </button>
+          </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-emerald-700 border-t border-emerald-600">
-            <nav className="px-2 pt-2 pb-4">
-              <ul className="space-y-1">
-                {navItems.map((item, index) => {
-                  const IconComponent = item.Icon
-                  return (
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden bg-emerald-700 border-t border-emerald-600">
+              <nav className="px-2 pt-2 pb-4">
+                <ul className="space-y-1">
+                  {navItems.map((item, index) => (
                     <li key={index}>
                       <a
                         href={item.href}
                         onClick={(e) => handleNavClick(e, item.href)}
-                        className="flex items-center px-3 py-3 text-base font-medium text-white hover:bg-white/10 rounded-lg transition-colors duration-200 cursor-pointer"
+                        className="flex items-center px-3 py-3 text-base font-medium text-white hover:bg-white/10 rounded-lg transition-all duration-300 cursor-pointer"
                       >
-                        <IconComponent className="ml-3 w-5 h-5" />
+                        <i className={`fas ${item.icon} ml-3 text-lg`}></i>
                         <span>{item.label}</span>
                       </a>
                     </li>
-                  )
-                })}
-                <li>
-                  <Link
-                    href="/cv-en"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center px-3 py-3 text-base font-medium text-white bg-white/20 hover:bg-white/30 rounded-lg transition-colors duration-200"
-                  >
-                    CV <span className="mr-3 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">EN</span>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        )}
+                  ))}
+                  <li>
+                    <a
+                      href={redirectToHome ? '/' : '/cv-en'}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center px-3 py-3 bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-300"
+                    >
+                      <img
+                        src="https://devologyx.io/wp-content/uploads/2022/10/cv.png"
+                        alt="CV Icon"
+                        className="h-8 w-auto"
+                        loading="lazy"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   )

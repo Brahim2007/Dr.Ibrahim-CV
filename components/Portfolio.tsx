@@ -114,7 +114,7 @@ export default function Portfolio() {
             <button
               key={index}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+              className={`px-6 py-3 rounded-full font-semibold transition-colors duration-150 ${
                 activeFilter === filter.value
                   ? 'bg-emerald-500 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 border border-gray-200'
@@ -130,7 +130,7 @@ export default function Portfolio() {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200"
             >
               <div className="relative overflow-hidden">
                 {/* Project Image */}
@@ -139,13 +139,13 @@ export default function Portfolio() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover"
                     loading="lazy"
                     unoptimized
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-200"></div>
                   
                   {/* Project Number */}
                   <div className="absolute top-4 right-4 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
@@ -161,7 +161,7 @@ export default function Portfolio() {
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Link
                       href={`/portfolio-single?project=${project.id}`}
-                      className="bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-emerald-50"
+                      className="bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-emerald-50 transition-colors duration-150"
                     >
                       عرض التفاصيل
                     </Link>
@@ -170,7 +170,7 @@ export default function Portfolio() {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-emerald-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                     {project.title}
                   </h3>
                   
@@ -198,7 +198,7 @@ export default function Portfolio() {
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors duration-150 shadow-lg hover:shadow-xl"
           >
             <i className="fa fa-rocket ml-2"></i>
             ابدأ مشروعك الآن

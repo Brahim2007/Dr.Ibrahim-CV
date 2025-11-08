@@ -72,6 +72,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-top: 17px;
 }
 
 #header .logo a {
@@ -319,7 +320,7 @@ body {
     color: #084298;
     padding: 3px 8px;
     border-radius: 50px;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     margin-left: 6px;
     display: inline-block;
@@ -341,7 +342,7 @@ body {
     font-family: 'FontAwesome' !important;
     font-weight: normal !important;
     font-style: normal !important;
-    font-size: 14px;
+    font-size: 16px;
     width: 18px;
     text-align: center;
     flex-shrink: 0;
@@ -704,12 +705,12 @@ body {
     flex: 1;
     word-wrap: break-word;
     line-height: 1.4;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .skill .skill-title .skill-percent {
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #000 !important;
     white-space: nowrap;
@@ -1017,7 +1018,7 @@ body {
     padding: 8px 15px;
     background: #42bc7f;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 20px;
     font-weight: 500;
 }
@@ -1084,7 +1085,7 @@ body {
 
 .project-info-card .meta {
     color: #666;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -1140,7 +1141,7 @@ body {
 }
 
 .project-link i {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Project Sections */
@@ -1327,7 +1328,7 @@ body {
     #testimonials .owl-nav button {
         width: 35px;
         height: 35px;
-        font-size: 14px;
+        font-size: 16px;
     }
     
     #testimonials .owl-nav .owl-prev {
@@ -1470,7 +1471,7 @@ input::placeholder, textarea::placeholder {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: #333;
     border: 2px solid transparent;
@@ -1537,7 +1538,7 @@ input::placeholder, textarea::placeholder {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     z-index: 10;
     backdrop-filter: blur(10px);
@@ -1545,7 +1546,7 @@ input::placeholder, textarea::placeholder {
 }
 
 #latest-works .portfolio-views i {
-    font-size: 14px;
+    font-size: 16px;
     color: #42bc7f;
 }
 
@@ -1673,7 +1674,7 @@ input::placeholder, textarea::placeholder {
     padding: 6px 14px;
     background: linear-gradient(135deg, #42bc7f 0%, #36a372 100%);
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 20px;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -2226,7 +2227,7 @@ section {
 
 #footer .copyright-year {
     color: #ccc;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -2379,7 +2380,7 @@ section {
     display: block;
     text-align: center;
     direction: rtl;
-    font-size: 13px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.8);
     margin-top: 3px;
     font-style: italic;
@@ -2550,14 +2551,14 @@ section {
     }
     
     #latest-works .portfolio-views {
-        font-size: 11px;
+        font-size: 14px;
         padding: 6px 12px;
         top: 10px;
         left: 10px;
     }
     
     #latest-works .tech-tag {
-        font-size: 11px;
+        font-size: 14px;
         padding: 5px 12px;
     }
     
@@ -2573,7 +2574,7 @@ section {
     }
     
     .portfolio-filter .filter-menu li {
-        font-size: 13px;
+        font-size: 15px;
         padding: 8px 15px;
         margin: 5px;
     }
@@ -2597,7 +2598,7 @@ section {
     }
     
     #latest-works .portfolio-views {
-        font-size: 10px;
+        font-size: 12px;
         padding: 5px 10px;
     }
 }
@@ -2618,7 +2619,7 @@ section {
     }
     
     #latest-works .tech-tag {
-        font-size: 10px;
+        font-size: 12px;
         padding: 4px 10px;
     }
 }

@@ -1502,12 +1502,15 @@ a:hover{
 #contact{
 	background:#f5f5f5;
 }
+#contact.section{
+	padding-bottom:60px;
+}
 #contact .section-title h2 {
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 }
 #contact .form-head {
-	padding: 38px 76px;
+	padding: 38px 76px 24px 76px;
 	box-shadow: 4px 4px 10px #0003;
 	margin: 0px 100px;
 }

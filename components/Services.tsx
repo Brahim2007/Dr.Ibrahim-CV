@@ -1,37 +1,37 @@
 export default function Services() {
   const services = [
     {
-      icon: 'fa-laptop',
+      icon: 'fas fa-laptop',
       title: 'تطوير مواقع الويب',
       description: 'تصميم وتطوير مواقع ويب متجاوبة وسريعة باستخدام أحدث التقنيات مثل HTML5, CSS3, JavaScript.',
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: 'fa-shopping-cart',
+      icon: 'fas fa-shopping-cart',
       title: 'متاجر إلكترونية',
       description: 'إنشاء متاجر إلكترونية متكاملة مع أنظمة الدفع والشحن وإدارة المخزون والعملاء.',
       color: 'from-green-500 to-green-600'
     },
     {
-      icon: 'fa-wordpress',
+      icon: 'fab fa-wordpress',
       title: 'مواقع ووردبريس',
       description: 'تطوير مواقع باستخدام ووردبريس مع تصميم قوالب مخصصة وإضافات وظيفية.',
       color: 'from-blue-400 to-blue-500'
     },
     {
-      icon: 'fa-pencil',
+      icon: 'fas fa-pencil-ruler',
       title: 'تصميم واجهات المستخدم',
       description: 'تصميم واجهات مستخدم جذابة وسهلة الاستخدام تركز على تجربة المستخدم وتحسين التحويلات.',
       color: 'from-purple-500 to-purple-600'
     },
     {
-      icon: 'fa-rocket',
+      icon: 'fas fa-rocket',
       title: 'تحسين الأداء',
       description: 'تحسين سرعة مواقع الويب وأدائها لتحسين تجربة المستخدم وترتيب محركات البحث.',
       color: 'from-orange-500 to-orange-600'
     },
     {
-      icon: 'fa-life-ring',
+      icon: 'fas fa-life-ring',
       title: 'الدعم والصيانة',
       description: 'تقديم خدمات الدعم الفني والصيانة المستمرة لضمان استمرارية عمل المواقع بكفاءة.',
       color: 'from-red-500 to-red-600'
@@ -64,7 +64,7 @@ export default function Services() {
               
               {/* Icon */}
               <div className={`relative z-10 w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <i className={`fa ${service.icon} text-2xl text-white`}></i>
+                <i className={`${service.icon} text-2xl text-white`}></i>
               </div>
 
               {/* Content */}

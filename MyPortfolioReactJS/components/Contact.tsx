@@ -113,7 +113,7 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { label: 'سرعة الرد', value: '24 ساعة' },
-                { label: 'مشاريع مكتملة', value: '50+' },
+                { label: 'مشاريع مكتملة', value: '15+' },
                 { label: 'رضا العملاء', value: '95%' },
                 { label: 'دعم فني', value: '24/7' },
               ].map((stat, index) => (

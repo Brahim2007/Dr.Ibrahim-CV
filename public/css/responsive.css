@@ -225,8 +225,8 @@ html[dir="rtl"] .slicknav_menu .slicknav_btn {
 	padding: 10px 0;
 }
 #header .logo {
-	padding-top: 14px;
-	text-align: right;
+    padding-top: 17px;
+    text-align: right;
 }
 .mobile-menu{
 	display:block;
@@ -266,7 +266,7 @@ html[dir="rtl"] .mobile-menu{
 	margin-top: 30px;
 }
 #slider .button .btn {
-	font-size: 13px;
+	font-size: 15px;
 	padding: 0 20px;
 	height: 38px;
 	line-height: 38px;
@@ -297,7 +297,7 @@ html[dir="rtl"] .mobile-menu{
 	max-width: 100%;
 }
 #about .single-about p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.7;
 }
 #about .single-about .bolt {
@@ -314,7 +314,7 @@ html[dir="rtl"] .mobile-menu{
 	margin-bottom: 8px;
 }
 #service .single-service p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.6;
 }
 .skill {
@@ -452,11 +452,11 @@ html[dir="rtl"] .mobile-menu{
 	margin-bottom: 15px;
 }
 #contact .contact-info p {
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.6;
 }
 #contact .contact-info span {
-	font-size: 14px;
+	font-size: 16px;
 	margin-top: 12px;
 	display: flex;
 	align-items: center;
@@ -465,7 +465,7 @@ html[dir="rtl"] .mobile-menu{
 }
 #contact .form input,
 #contact .form textarea {
-	font-size: 14px;
+	font-size: 16px;
 	padding: 12px 15px;
 	width: 100%;
 }
@@ -606,12 +606,12 @@ html[dir="rtl"] .mobile-menu{
 		gap: 5px;
 	}
 	.tech-tag {
-		font-size: 11px;
+		font-size: 14px;
 		padding: 4px 8px;
 	}
 	.portfolio-number,
 	.portfolio-views {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 
@@ -625,16 +625,16 @@ html[dir="rtl"] .mobile-menu{
 		margin-bottom: 20px;
 	}
 	.single-skill h4 {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	.skill-percent {
-		font-size: 12px;
+		font-size: 14px;
 	}
 	.skill-content h3 {
 		font-size: 22px;
 	}
 	.skill-content p {
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 1.6;
 	}
 }
@@ -668,10 +668,10 @@ html[dir="rtl"] .mobile-menu{
 		margin-bottom: 8px;
 	}
 	#footer .footer-links li a {
-		font-size: 14px;
+		font-size: 16px;
 	}
 	#footer .footer-description {
-		font-size: 14px;
+		font-size: 16px;
 		line-height: 1.6;
 	}
 	#footer .social li {
@@ -703,23 +703,23 @@ html[dir="rtl"] .mobile-menu{
 	line-height: 28px;
 }
 #slider .single-slider p {
-	font-size: 13px;
+	font-size: 15px;
 }
 .story .section-title h2::before {
 	display:none;
 }
 #about .single-about p {
-	font-size: 13px;
+	font-size: 15px;
 }
 #service .single-service h5 {
 	font-size: 16px;
 }
 #service .single-service p {
-	font-size: 13px;
+	font-size: 15px;
 }
 #contact .form input,
 #contact .form textarea {
-	font-size: 13px;
+	font-size: 15px;
 	padding: 10px 12px;
 }
 .portfolio-card .portfolio-content h4 {
@@ -734,14 +734,14 @@ html[dir="rtl"] .mobile-menu{
 	max-height: 180px !important;
 }
 .tech-tag {
-	font-size: 10px;
+	font-size: 12px;
 	padding: 4px 10px;
 }
 .skill-group-title {
 	font-size: 16px;
 }
 .single-skill h4 {
-	font-size: 13px;
+	font-size: 15px;
 }
 }
 

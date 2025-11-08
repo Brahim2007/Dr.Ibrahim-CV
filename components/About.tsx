@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 export default function About() {
   const socialLinks = [
-    { icon: 'fa-facebook-f', href: '#', color: 'hover:bg-blue-600' },
-    { icon: 'fa-twitter', href: '#', color: 'hover:bg-blue-400' },
-    { icon: 'fa-instagram', href: '#', color: 'hover:bg-pink-600' },
-    { icon: 'fa-linkedin', href: '#', color: 'hover:bg-blue-700' },
+    { icon: 'fab fa-facebook-f', href: '#', color: 'hover:bg-blue-600' },
+    { icon: 'fab fa-twitter', href: '#', color: 'hover:bg-blue-400' },
+    { icon: 'fab fa-instagram', href: '#', color: 'hover:bg-pink-600' },
+    { icon: 'fab fa-linkedin', href: '#', color: 'hover:bg-blue-700' },
   ]
 
   return (
@@ -45,7 +45,7 @@ export default function About() {
                 href="/cv-en"
                 className="inline-flex items-center px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <i className="fa fa-download ml-2"></i>
+                <i className="fas fa-download ml-2"></i>
                 تحميل السيرة الذاتية
               </Link>
 
@@ -57,7 +57,7 @@ export default function About() {
                     href={social.href}
                     className={`flex items-center justify-center w-12 h-12 bg-gray-100 ${social.color} text-gray-600 hover:text-white rounded-full transition-all duration-300 transform hover:scale-110`}
                   >
-                    <i className={`fa ${social.icon}`}></i>
+                    <i className={social.icon}></i>
                   </a>
                 ))}
               </div>
@@ -90,7 +90,7 @@ export default function About() {
               {/* Projects Badge */}
               <div className="absolute -bottom-4 -left-4 bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-2xl font-bold">15+</div>
                   <div className="text-sm">مشروع ناجح</div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-gray-200">
           {[
             { number: '95%', label: 'رضا العملاء' },
-            { number: '50+', label: 'مشروع مكتمل' },
+            { number: '15+', label: 'مشروع مكتمل' },
             { number: '5+', label: 'سنوات خبرة' },
             { number: '24/7', label: 'دعم فني' },
           ].map((stat, index) => (

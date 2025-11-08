@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function Footer() {
+type FooterProps = {
+  showContactCTA?: boolean
+}
+
+export default function Footer({ showContactCTA = true }: FooterProps) {
   const quickLinks = [
     { href: '#slider', label: 'الرئيسية' },
     { href: '#about', label: 'نبذة عني' },
@@ -12,17 +16,17 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: 'fa-facebook', href: '#', label: 'Facebook' },
-    { icon: 'fa-twitter', href: '#', label: 'Twitter' },
-    { icon: 'fa-linkedin', href: '#', label: 'LinkedIn' },
-    { icon: 'fa-github', href: '#', label: 'GitHub' },
-    { icon: 'fa-instagram', href: '#', label: 'Instagram' },
+    { icon: 'facebook-f', href: '#', label: 'Facebook' },
+    { icon: 'twitter', href: '#', label: 'Twitter' },
+    { icon: 'linkedin-in', href: '#', label: 'LinkedIn' },
+    { icon: 'github', href: '#', label: 'GitHub' },
+    { icon: 'instagram', href: '#', label: 'Instagram' },
   ]
 
   const contactInfo = [
-    { icon: 'fa-envelope', text: 'kertiou.brahim@gmail.com', href: 'mailto:kertiou.brahim@gmail.com' },
-    { icon: 'fa-phone', text: '+90 531 857 9095', href: 'tel:+905318579095' },
-    { icon: 'fa-map-marker', text: 'اسطنبول، تركيا', href: '#' },
+    { icon: 'envelope', text: 'kertiou.brahim@gmail.com', href: 'mailto:kertiou.brahim@gmail.com' },
+    { icon: 'phone', text: '+90 531 857 9095', href: 'tel:+905318579095' },
+    { icon: 'map-marker-alt', text: 'اسطنبول، تركيا', href: '#' },
   ]
 
   return (
@@ -54,7 +58,7 @@ export default function Footer() {
                       aria-label={social.label}
                       className="w-12 h-12 bg-gray-800 hover:bg-emerald-500 text-gray-300 hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                     >
-                      <i className={`fa ${social.icon} text-lg`}></i>
+                      <i className={`fab fa-${social.icon} text-lg`}></i>
                     </a>
                   ))}
                 </div>
@@ -111,7 +115,7 @@ export default function Footer() {
                     className="flex items-center text-gray-300 hover:text-emerald-400 transition-colors duration-300 group"
                   >
                     <div className="w-10 h-10 bg-gray-800 group-hover:bg-emerald-500 rounded-lg flex items-center justify-center transition-colors duration-300 ml-3">
-                      <i className={`fa ${info.icon} text-sm`}></i>
+                      <i className={`fas fa-${info.icon} text-sm`}></i>
                     </div>
                     <span className="text-lg">{info.text}</span>
                   </a>
@@ -153,15 +157,17 @@ export default function Footer() {
       </div>
 
       {/* Floating CTA */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <a
-          href="#contact"
-          className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-        >
-          <i className="fa fa-comments ml-2"></i>
-          <span className="font-semibold">تواصل معي</span>
-        </a>
-      </div>
+      {showContactCTA && (
+        <div className="fixed bottom-6 left-6 z-50">
+          <a
+            href="#contact"
+            className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <i className="fa fa-comments ml-2"></i>
+            <span className="font-semibold">تواصل معي</span>
+          </a>
+        </div>
+      )}
     </footer>
   )
 }

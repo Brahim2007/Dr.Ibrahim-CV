@@ -3,7 +3,7 @@ import '../styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'بورتفوليو - مطور مواقع ويب محترف | خدمات تطوير ويب متكاملة',
-  description: 'مطور مواقع ويب محترف متخصص في تطوير مواقع ويب حديثة ومتاجر إلكترونية وأنظمة إدارة. خبرة 5+ سنوات في React وNext.js وWordPress. 50+ مشروع ناجح. تواصل الآن للحصول على استشارة مجانية.',
+  description: 'مطور مواقع ويب محترف متخصص في تطوير مواقع ويب حديثة ومتاجر إلكترونية وأنظمة إدارة. خبرة 5+ سنوات في React وNext.js وWordPress. 15+ مشروع ناجح. تواصل الآن للحصول على استشارة مجانية.',
   keywords: [
     'مطور ويب',
     'تطوير مواقع',
@@ -79,15 +79,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body style={{ fontFamily: '"IBM Plex Sans Arabic", sans-serif', fontSize: '16px', lineHeight: '18.4px', color: 'rgb(0, 0, 0)', fontWeight: 500 }}>{children}</body>
+      <body className="font-ibm-plex-sans-arabic bg-white text-gray-900">{children}</body>
     </html>
   )
 }

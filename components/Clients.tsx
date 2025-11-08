@@ -7,12 +7,15 @@ export default function Clients() {
   const [currentIndex, setCurrentIndex] = useState(0)
   
   const clients = [
-    'https://almojaded.com/wp-content/uploads/2024/01/logomojadid.png',
-    'https://rowwad.net/uploads/logo-rowwad.png',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7uGRtc0IeXTwaQ9jto5END1L7WpuDyKIJ2Q&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyYZab80P9A7sMdKaehKhq5RscyPLzDcSFnA&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM6msGP5lg6kzOpUkWOfcGEAGflVDzXVpbLQ&s',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvjAeNq-VmbUcV3BgwFo7Z1paFY9Kgtuqzdcbb0cUOQ_vYrXJwK9MFxD0RFagJV--f0tU&usqp=CAU'
+    '/img/Logo.png',
+    '/img/moj.png',
+    '/img/أمان.png',
+    '/img/اكاديمية بشاك شهير.png',
+    '/img/جامعة النبلاء.png',
+    '/img/رؤيا للبحوث.png',
+    '/img/مدرسة المجدد.jpeg',
+    '/img/مركز الاستشراف للدراسات والأبحاث.png',
+    '/img/مركز حريات للدراسات السياسية والاستراتيجية.png'
   ]
 
   useEffect(() => {
@@ -101,7 +104,7 @@ export default function Clients() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-emerald-500 mb-2">50+</div>
+            <div className="text-4xl font-bold text-emerald-500 mb-2">15+</div>
             <div className="text-gray-600 text-lg">مشروع مكتمل</div>
           </div>
           <div className="text-center">

@@ -70,39 +70,11 @@ export default function SocialSidebar() {
 
   return (
     <>
-      {/* Social Sidebar */}
-      <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
-        <div className="flex flex-col space-y-4">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              aria-label={social.label}
-              className={`
-                w-14 h-14 ${social.bgColor} ${social.color}
-                text-white rounded-full flex items-center justify-center
-                transition-all duration-300 transform hover:scale-110
-                shadow-lg hover:shadow-xl
-                group relative
-              `}
-            >
-              <i className={`fa ${social.icon} text-lg`}></i>
-              
-              {/* Tooltip */}
-              <div className="absolute right-full mr-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                {social.label}
-                <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-r-gray-900"></div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
       {/* Scroll to Top Button */}
       {isScrolled && (
         <button
           onClick={scrollToTop}
-          className="fixed right-6 bottom-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl group"
+          className="fixed right-6 bottom-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl group"
           aria-label="Scroll to top"
         >
           <i className="fa fa-chevron-up text-lg"></i>
@@ -116,7 +88,7 @@ export default function SocialSidebar() {
       )}
 
       {/* Mobile Social Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl z-50 lg:hidden">
+      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-2xl z-40 lg:hidden">
         <div className="flex justify-around py-3">
           {socialLinks.slice(0, 4).map((social, index) => (
             <a

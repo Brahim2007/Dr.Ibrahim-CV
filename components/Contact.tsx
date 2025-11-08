@@ -9,21 +9,47 @@ export default function Contact() {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState({ type: '', text: '' })
+  const [message, setMessage] = useState<{ type: 'success' | 'error' | ''; text: string }>({
+    type: '',
+    text: ''
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setMessage({ type: '', text: '' })
     setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'حدث خطأ غير متوقع.')
+      }
+
       setMessage({
         type: 'success',
-        text: 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'
+        text: data?.message || 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'
       })
       setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      setMessage({
+        type: 'error',
+        text:
+          error instanceof Error
+            ? error.message
+            : 'حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة لاحقاً.'
+      })
+    } finally {
       setIsSubmitting(false)
-    }, 1000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,7 +78,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -113,7 +139,7 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { label: 'سرعة الرد', value: '24 ساعة' },
-                { label: 'مشاريع مكتملة', value: '50+' },
+                { label: 'مشاريع مكتملة', value: '15+' },
                 { label: 'رضا العملاء', value: '95%' },
                 { label: 'دعم فني', value: '24/7' },
               ].map((stat, index) => (
@@ -126,10 +152,10 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">أرسل رسالة</h3>
             
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               {/* Message Alert */}
               {message.text && (
                 <div
@@ -143,7 +169,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 gap-6">
+              <div className="grid grid-cols-1 gap-5">
                 {/* Name Field */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -195,25 +221,26 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-400 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 shadow-lg hover:shadow-xl disabled:shadow-lg"
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center justify-center">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin ml-3"></div>
-                      جاري الإرسال...
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center">
-                      <i className="fa fa-paper-plane ml-2"></i>
-                      إرسال الرسالة
-                    </div>
-                  )}
-                </button>
               </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-400 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 disabled:scale-100 shadow-lg hover:shadow-xl disabled:shadow-lg"
+              >
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin ml-3"></div>
+                    جاري الإرسال...
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center">
+                    <i className="fa fa-paper-plane ml-2"></i>
+                    إرسال الرسالة
+                  </div>
+                )}
+              </button>
             </form>
           </div>
         </div>
