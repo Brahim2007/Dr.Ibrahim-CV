@@ -97,7 +97,7 @@ export default function Header({ redirectToHome = false, forceHomeLinks = false 
           <a href="/" className="group flex items-center gap-3" aria-label={isEnglish ? 'Go to portfolio' : 'العودة للرئيسية'}>
             {isEnglish ? (
               <span className="flex h-12 items-center justify-center overflow-hidden rounded-lg">
-                <Image src="/img/En Logo.png" alt="Brahim Kertiou CV" width={200} height={48} className="h-12 w-auto object-contain" priority />
+                <Image src="/img/En-Logo.png" alt="Brahim Kertiou CV" width={200} height={48} className="h-12 w-auto object-contain" priority />
               </span>
             ) : (
               <>
