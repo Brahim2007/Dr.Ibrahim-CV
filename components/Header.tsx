@@ -101,8 +101,8 @@ export default function Header({ redirectToHome = false, forceHomeLinks = false 
               </span>
             ) : (
               <>
-                <span className="flex h-12 w-12 items-center justify-center overflow-hidden">
-                  <Image src="/img/MyLOGO.png" alt="إبراهيم كرثيو" width={48} height={48} className="h-12 w-auto object-contain" priority />
+                <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full">
+                  <Image src="/img/MyLOGO.png" alt="إبراهيم كرثيو" width={48} height={48} className="h-12 w-auto object-cover" priority />
                 </span>
                 <span className="hidden min-w-0 sm:block">
                   <span className={`block text-sm font-black leading-5 ${isSticky && !redirectToHome ? 'text-slate-950 dark:text-white' : 'text-white'}`}>
