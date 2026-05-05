@@ -71,8 +71,8 @@ export default function Footer({ showContactCTA = false, language = 'ar' }: Foot
           <div className="grid gap-10 lg:grid-cols-[1.25fr_.75fr_.8fr_1fr]">
             <section className="space-y-6">
               <Link href="/" className={`flex items-center gap-4 ${isEnglish ? '' : 'flex-row-reverse text-right'}`}>
-                <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-lg shadow-black/20">
-                  <Image src="/img/nnn.png" alt="Brahim Kertiou logo" width={56} height={56} className="h-11 w-auto" />
+                <span className="flex h-14 w-14 items-center justify-center overflow-hidden">
+                  <Image src="/img/MyLOGO.png" alt="إبراهيم كرثيو" width={56} height={56} className="h-14 w-auto object-contain" />
                 </span>
                 <span>
                   <span className="block text-lg font-black">{isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرثيو'}</span>
