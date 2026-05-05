@@ -99,11 +99,11 @@ export default function Slider() {
           <div className="flex justify-center lg:hidden">
             <div className="relative overflow-hidden rounded-full border-4 border-emerald-400/30 shadow-2xl shadow-emerald-500/20">
               <Image
-                src="/img/photo.png"
+                src="/img/slider.jpg"
                 alt="إبراهيم كرثيو"
                 width={180}
                 height={180}
-                className="h-44 w-44 object-cover"
+                className="h-44 w-44 rounded-full object-cover"
                 priority
               />
             </div>
