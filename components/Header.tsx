@@ -100,9 +100,19 @@ export default function Header({ redirectToHome = false, forceHomeLinks = false 
                 <Image src="/img/En-Logo.png" alt="Brahim Kertiou CV" width={200} height={48} className="h-12 w-auto object-contain" priority />
               </span>
             ) : (
-              <span className="flex h-12 items-center justify-center overflow-hidden rounded-lg">
-                <Image src="/img/Ar-Logo.png" alt="إبراهيم كرثيو" width={200} height={48} className="h-12 w-auto object-contain" priority />
-              </span>
+              <>
+                <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm">
+                  <Image src="/img/nnn.png" alt="Brahim Kertiou logo" width={48} height={48} className="h-10 w-auto" priority />
+                </span>
+                <span className="hidden min-w-0 sm:block">
+                  <span className={`block text-sm font-black leading-5 ${isSticky && !redirectToHome ? 'text-slate-950 dark:text-white' : 'text-white'}`}>
+                    {isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرثيو'}
+                  </span>
+                  <span className={`block text-xs font-semibold ${isSticky && !redirectToHome ? 'text-slate-500 dark:text-slate-400' : 'text-emerald-100'}`}>
+                    {isEnglish ? 'Research & Digital Platforms' : 'تطوير الويب والمنصات الرقمية'}
+                  </span>
+                </span>
+              </>
             )}
           </a>
 
