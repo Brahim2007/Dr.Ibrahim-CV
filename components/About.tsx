@@ -30,7 +30,7 @@ export default function About() {
               <div className="relative overflow-hidden rounded-3xl">
                 <Image
                   src="/img/photo.png"
-                  alt="إبراهيم كرتيو"
+                  alt="إبراهيم كرثيو"
                   width={400}
                   height={500}
                   priority

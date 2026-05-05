@@ -100,7 +100,7 @@ export default function Header({ redirectToHome = false, forceHomeLinks = false 
             </span>
             <span className="hidden min-w-0 sm:block">
               <span className={`block text-sm font-black leading-5 ${isSticky && !redirectToHome ? 'text-slate-950 dark:text-white' : 'text-white'}`}>
-                {isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرتيو'}
+                {isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرثيو'}
               </span>
               <span className={`block text-xs font-semibold ${isSticky && !redirectToHome ? 'text-slate-500 dark:text-slate-400' : 'text-emerald-100'}`}>
                 {isEnglish ? 'Research & Digital Platforms' : 'تطوير الويب والمنصات الرقمية'}

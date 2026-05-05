@@ -75,7 +75,7 @@ export default function Footer({ showContactCTA = false, language = 'ar' }: Foot
                   <Image src="/img/nnn.png" alt="Brahim Kertiou logo" width={56} height={56} className="h-11 w-auto" />
                 </span>
                 <span>
-                  <span className="block text-lg font-black">{isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرتيو'}</span>
+                  <span className="block text-lg font-black">{isEnglish ? 'Brahim Kertiou' : 'إبراهيم كرثيو'}</span>
                   <span className="block text-sm font-semibold text-emerald-200">
                     {isEnglish ? 'Research & Digital Platforms' : 'تطوير الويب والمنصات الرقمية'}
                   </span>

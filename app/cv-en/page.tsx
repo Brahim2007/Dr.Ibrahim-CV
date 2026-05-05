@@ -292,7 +292,7 @@ const education: TimelineItem[] = [
     title: 'Ph.D. in Information & Document Management',
     period: 'Sep 2016 - May 2023',
     place: 'Istanbul University, Turkey',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/%C4%B0stanbul_%C3%9Cniversitesi_Logo.svg/1200px-%C4%B0stanbul_%C3%9Cniversitesi_Logo.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/%C4%B0stanbul_%C3%9Cniversitesi_Logo.svg/1280px-%C4%B0stanbul_%C3%9Cniversitesi_Logo.svg.png',
     description: (
       <>
         <strong>Dissertation:</strong> Alternative Metrics for Evaluating Scientific Outputs: A Model for An Open Evaluation Platform

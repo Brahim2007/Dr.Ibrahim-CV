@@ -4,11 +4,11 @@ import '../styles/globals.css'
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 
 export const metadata: Metadata = {
-  title: 'إبراهيم كرتيو | مطور منصات ويب وأنظمة إدارة',
+  title: 'إبراهيم كرثيو | مطور منصات ويب وأنظمة إدارة',
   description:
-    'بورتفوليو إبراهيم كرتيو: تطوير منصات SaaS، لوحات تحكم، أنظمة تشغيل أعمال، منصات بحثية وأكاديمية، متاجر CMS، ومواقع مؤسسية باستخدام Next.js وTypeScript وPrisma وMySQL وWordPress.',
+    'بورتفوليو إبراهيم كرثيو: تطوير منصات SaaS، لوحات تحكم، أنظمة تشغيل أعمال، منصات بحثية وأكاديمية، متاجر CMS، ومواقع مؤسسية باستخدام Next.js وTypeScript وPrisma وMySQL وWordPress.',
   keywords: [
-    'إبراهيم كرتيو',
+    'إبراهيم كرثيو',
     'مطور منصات ويب',
     'أنظمة إدارة',
     'لوحات تحكم',
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'إبراهيم كرتيو | مطور منصات ويب وأنظمة إدارة',
+    title: 'إبراهيم كرثيو | مطور منصات ويب وأنظمة إدارة',
     description:
       'أعمال مختارة في أنظمة تشغيل الأعمال، لوحات التحكم، المنصات البحثية، CMS، والمواقع المؤسسية.',
     url: '/',
-    siteName: 'بورتفوليو إبراهيم كرتيو',
+    siteName: 'بورتفوليو إبراهيم كرثيو',
     images: [
       {
         url: '/img/nnn.png',
         width: 1200,
         height: 630,
-        alt: 'بورتفوليو إبراهيم كرتيو',
+        alt: 'بورتفوليو إبراهيم كرثيو',
       },
     ],
     locale: 'ar_AR',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'إبراهيم كرتيو | مطور منصات ويب',
+    title: 'إبراهيم كرثيو | مطور منصات ويب',
     description: 'تطوير منصات ويب وأنظمة إدارة ولوحات تحكم ومواقع مؤسسية.',
     images: ['/img/nnn.png'],
   },

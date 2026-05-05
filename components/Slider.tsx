@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpLeft, BarChart3, Braces, CheckCircle2, Database, LayoutDashboard, Rocket } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -91,6 +92,20 @@ export default function Slider() {
               >
                 ناقش فكرة مشروعك
               </Link>
+            </div>
+          </div>
+
+          {/* الملف الشخصي يظهر فقط في الجوال وسط الشاشة */}
+          <div className="flex justify-center lg:hidden">
+            <div className="relative overflow-hidden rounded-full border-4 border-emerald-400/30 shadow-2xl shadow-emerald-500/20">
+              <Image
+                src="/img/photo.png"
+                alt="إبراهيم كرثيو"
+                width={180}
+                height={180}
+                className="h-44 w-44 object-cover"
+                priority
+              />
             </div>
           </div>
 
